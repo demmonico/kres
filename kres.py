@@ -376,7 +376,7 @@ def main():
     clusterConfig = KubeConfig(context=args.kube_config_context, kube_config_file=args.kube_config_file)
     cluster = clusterConfig.get_cluster()
 
-    printer = Printer(verbosity_enabled=args.print_verbosity)
+    printer = Printer(verbosity_enabled=args.verbose)
     printer.print(f"KUBE_CLUSTER: {cluster} // active context - {cluster}{f' (overwritten by script argument - {clusterConfig.get_cluster()})' if clusterConfig.get_config_cluster() != cluster else ''} ")
     printer.print(f"LABEL_SELECTOR: {label_selector}")
 
